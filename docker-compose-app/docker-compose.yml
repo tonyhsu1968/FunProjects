@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+   product-services:               #it is the hostname which can be used by other containers to 
+      build: ./product             #communicate with it
+      volumes:
+        - ./product:/usr/src/app   #bind volume mounting
+      ports: 
+        - 5001:80
+   website:
+      image: php:apache
+      volumes:
+        - ./website:/var/www/html
+      ports:
+        - 5000:80
+      depends_on: 
+        - product-services
