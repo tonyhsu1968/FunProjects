@@ -1,8 +1,8 @@
 function run(type, next){
 
-  next = next || 0
+  next = next || ''
     window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
-    let finalTranscript = '';
+    let finalTranscript = next;
     let recognition = new window.SpeechRecognition();
 
     recognition.interimResults = true;
@@ -37,8 +37,32 @@ function run(type, next){
       }
       document.getElementById(type).value = finalTranscript + interimTranscript;
       
+      //document.getElementById(type).onclick = function() {
+        //alert("button was clicked");
+    // }​;​
+      z=document.getElementById(type).value;
+     // finalTranscript=z;
+      console.log({finalTranscript});
+      console.log({z});
+
+     /* document.getElementById(type).oninput() = function()
+      {
+        z2=document.getElementById(type).value;
+        console.log({z2});
+      }*/
       
     }
+   /* recognition.onaudioend = function() {
+      console.log('Audio capturing ended');
+      z=document.getElementById(type).value;
+      console.log(z)
+    } */
+    //finalTranscript=document.getElementById(type).value
     recognition.start();
    
+}
+
+function myFunction(type) {
+  var x = document.getElementById(type).value;
+  run(type, x);
 }
