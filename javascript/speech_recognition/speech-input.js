@@ -20,9 +20,25 @@ function run(type, next){
         }
       }
 
-      document.getElementById(type).value = finalTranscript +  interimTranscript ;
+      pattern = /name (.*?) name/
+          
+      var result = finalTranscript.match(pattern);
+      
+      // console.log(result) It can be used for debugging JavaScript
+
+      try
+      { 
+      result = result[1].split(' ').join('');
+      finalTranscript= finalTranscript.replace(pattern, result)
+      }
+      catch(err)
+      {
+
+      }
+      document.getElementById(type).value = finalTranscript + interimTranscript;
+      
       
     }
     recognition.start();
-    //document.getElementById("handleinput").value="Hero"
+   
 }
