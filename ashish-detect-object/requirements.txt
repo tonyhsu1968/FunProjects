@@ -12,4 +12,4 @@ pandas>=0.19
 xgboost==0.90
 requests==2.22.0
 opencv-python==4.1.0.25
-waitress==1.4.0
+waitress==1.4.3
