@@ -9,6 +9,8 @@ def rescale_images(directory, size):
         im_resized.save(directory+img)
         
 if __name__ == '__main__':
+    # python transform_image_resolution.py -d images/ -s 800 600 
+    # use the above command in vscode to run this script
     parser = argparse.ArgumentParser(description="Rescale images")
     parser.add_argument('-d', '--directory', type=str, required=True, help='Directory containing the images')
     parser.add_argument('-s', '--size', type=int, nargs=2, required=True, metavar=('width', 'height'), help='Image size')
