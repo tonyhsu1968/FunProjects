@@ -1,0 +1,3 @@
+D:\FunProjects\TensorflowObjectDetection\models\research>"D:\FunProjects\TensorflowObjectDetection\protocolBufferCompiler\bin\protoc.exe" object_detection\protos\*.proto --python_out=.
+
+Type above in vscode to convert .protoc files into .py files
