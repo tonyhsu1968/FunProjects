@@ -1,0 +1,5 @@
+First run python app.py in vscode then run any of the below two commands
+
+docker run -p 8501:8501 --name=my_model -v "D:\FunProjects\Deploying-Deep-Learning-Models-using-TensorFlow-Serving-with-Docker-and-Flask-master\my_model:/models/my_model/1" -e MODEL_NAME=my_model tensorflow/serving
+
+docker run -p 8501:8501 --name=pets -v "D:\FunProjects\Deploying-Deep-Learning-Models-using-TensorFlow-Serving-with-Docker-and-Flask-master\pets:/models/pets/1" -e MODEL_NAME=pets tensorflow/serving
