@@ -1,9 +1,9 @@
 Old Method
 First run python app.py in vscode then run any of the below two commands
 
-docker run -p 8500:8500 --name=my_model -v "D:\WatchDog\Pull_In\DeployDeepLearning\services\tensorflow-serving\my_model:/models/my_model/1" -e MODEL_NAME=my_model tensorflow/serving
+docker run -p 8501:8501 --name=my_model -v "D:\WatchDog\Pull_In\DeployDeepLearning\services\tensorflow-serving\my_model:/models/my_model/1" -e MODEL_NAME=my_model tensorflow/serving
 
-docker run -p 8500:8500 -p 8501:8501 --name=my_model -v "D:\WatchDog\Pull_In\DeployDeepLearning\services\tensorflow-serving\my_model:/models/my_model/1" -e MODEL_NAME=my_model tensorflow/serving
+docker run -p 8500:8500 -p 8501:8501 --name=my_model -v "D:\WatchDog\Pull_In\DeployDeepLearning\any_input_test:/models/my_model/1" -e MODEL_NAME=my_model tensorflow/serving:1.8.0
 
 docker run -p 8501:8501 --name=pets -v "D:\FunProjects\Deploying-Deep-Learning-Models-using-TensorFlow-Serving-with-Docker-and-Flask-master\pets:/models/pets/1" -e MODEL_NAME=pets tensorflow/serving
 

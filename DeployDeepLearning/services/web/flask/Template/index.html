@@ -17,7 +17,7 @@
    <h1>Upload File Here</h1>
    <hr>
    <img src="{{ result.image_path }}" class="img-rounded" width="400" height="200">
-   <form class="form-inline" action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+   <form class="form-inline" action="/app" method="post" enctype="multipart/form-data">
      <div class="form-group">
        <input type="file" name="file" class="btn btn-default">
      </div>
