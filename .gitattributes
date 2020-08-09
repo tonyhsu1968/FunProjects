@@ -2,3 +2,4 @@
 DeployDeepLearning/my_model3/variables/** filter=lfs diff=lfs merge=lfs -text
 *.rar filter=lfs diff=lfs merge=lfs -text
 DeployDeepLearning/custom_sig/variables/** filter=lfs diff=lfs merge=lfs -text
+DeployDeepLearning/services/tensorflow-serving/detect_model/1/variables/* filter=lfs diff=lfs merge=lfs -text

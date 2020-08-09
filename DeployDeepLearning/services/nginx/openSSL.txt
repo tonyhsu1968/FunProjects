@@ -55,7 +55,7 @@ openssl pkcs12 -export -out ia.p12 -inkey ia.key -in ia.crt -chain -CAfile ca.cr
 For securing flask application
 https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https
 
-set RANDFILE=D:\FunProjects\SecureFlask\.rnd
+set RANDFILE=D:\Projects\GCP\.rnd
 set OPENSSL_CONF=D:\SOFTWARES\OpenSSL-Win64\bin\openssl.cfg
 
 openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365

@@ -1,11 +1,11 @@
-from flask import Flask, render_template, url_for, request, redirect, flash
+from flask import Flask, render_template, url_for, request, redirect, flash, jsonify
 #from flask_bootstrap import Bootstrap
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from database import db
 from dbmodels import User
 from waitress import serve
-
+from PIL import Image
 import os
 import model
 
@@ -69,6 +69,14 @@ def predict():                                    # rendered by this definition
             }
             return render_template('result.html', result = result)
     return render_template('index.html', result = static_result)
+
+@flask_app.route('/object', methods=['POST'])
+def object_detection():
+    file_ = request.files['image']
+    img = Image.open(file_.stream)
+    result = model.get_objects(img)
+    return jsonify({'results': result})
+    
 
 @flask_app.route('/signup', methods=['POST'])
 def signup_post():
