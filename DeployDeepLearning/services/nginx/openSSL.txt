@@ -2,8 +2,8 @@ link -https://blog.didierstevens.com/2015/03/30/howto-make-your-own-cert-with-op
 
 Before you start OpenSSL, you need to set 2 environment variables:
 
-set RANDFILE=D:\FunProjects\SecureFlask\.rnd
-set OPENSSL_CONF=D:\SOFTWARES\OpenSSL-Win64\bin\openssl.cfg
+set RANDFILE="some folder location\".rnd
+set OPENSSL_CONF="path to"\openssl.cfg
 
 First we generate a 4096-bit long RSA key for our root CA and store it in file ca.key:
 
@@ -55,7 +55,7 @@ openssl pkcs12 -export -out ia.p12 -inkey ia.key -in ia.crt -chain -CAfile ca.cr
 For securing flask application
 https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https
 
-set RANDFILE=D:\Projects\GCP\.rnd
-set OPENSSL_CONF=D:\SOFTWARES\OpenSSL-Win64\bin\openssl.cfg
+set RANDFILE="some folder location\".rnd
+set OPENSSL_CONF="path to\"openssl.cfg
 
 openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365
